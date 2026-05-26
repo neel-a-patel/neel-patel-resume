@@ -1,0 +1,121 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+* {
+  @apply scroll-smooth;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-dark-900 text-gray-100 font-sans;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(0, 180, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 100, 255, 0.03) 0%, transparent 50%);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-500 rounded-full;
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-400;
+}
+
+/* Typing Animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid rgba(0, 212, 255, 0.8);
+  animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+}
+
+/* Gradient Text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-blue-400;
+}
+
+/* Glassmorphism */
+.glass {
+  @apply bg-dark-800/30 backdrop-blur-md border border-white/10 rounded-xl;
+}
+
+.glass-sm {
+  @apply bg-dark-800/20 backdrop-blur-sm border border-white/5 rounded-lg;
+}
+
+/* Smooth Transitions */
+.transition-smooth {
+  @apply transition-all duration-300 ease-out;
+}
+
+/* Focus Styles */
+button:focus,
+a:focus {
+  @apply outline-none ring-2 ring-primary-500 ring-offset-2 ring-offset-dark-900 rounded;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary-500 text-dark-900;
+}
+
+/* Loading Animation */
+.loading-spinner {
+  border: 3px solid rgba(0, 212, 255, 0.1);
+  border-radius: 50%;
+  border-top: 3px solid #00d4ff;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Card Hover Effect */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/20 hover:scale-105;
+}
+
+/* Floating Elements */
+.float-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glow Effect */
+.glow-element {
+  animation: glow 3s ease-in-out infinite;
+}
